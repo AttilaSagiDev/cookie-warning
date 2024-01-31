@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 Magevolve Ltd.  All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <warning>
+            <basic>
+                <active>0</active>
+            </basic>
+            <display>
+                <position><![CDATA['']]></position>
+                <message><![CDATA[This website uses <strong>cookies</strong> to ensure you get the best experience on our website.]]></message>
+                <button_text><![CDATA[Got It!]]></button_text>
+                <link_text><![CDATA[Learn more]]></link_text>
+                <link_url><![CDATA[privacy-policy-cookie-restriction-mode]]></link_url>
+            </display>
+            <colors>
+                <background><![CDATA[#7e807e]]></background>
+                <background_text><![CDATA[#ffffff]]></background_text>
+                <button_background><![CDATA[#006cb4]]></button_background>
+                <button_text><![CDATA[#ffffff]]></button_text>
+            </colors>
+        </warning>
+    </default>
+</config>
