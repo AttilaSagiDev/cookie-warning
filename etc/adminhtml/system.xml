@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 Magevolve Ltd.  All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="metab" translate="label" sortOrder="500">
+            <label>Magevolve Extensions</label>
+        </tab>
+        <section id="warning" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Cookie Alert</label>
+            <tab>metab</tab>
+            <resource>Me_CookieWarning::config_warning</resource>
+            <group id="basic" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Basic</label>
+                <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable extension.</comment>
+                </field>
+            </group>
+            <group id="display" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Display</label>
+                <field id="position" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <source_model>Me\CookieWarning\Model\Config\Source\Position</source_model>
+                    <comment>Please select the position of the cookie warning.</comment>
+                </field>
+                <field id="message" translate="label comment" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message</label>
+                    <comment>Please enter the message for the cookie wraning. You can use HTML tags for formatting.</comment>
+                </field>
+                <field id="button_text" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dismiss Button Text</label>
+                    <comment>Please enter dismiss button text.</comment>
+                </field>
+                <field id="link_text" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Policy Link Text</label>
+                    <comment>Please enter policy link text.</comment>
+                </field>
+                <field id="link_url" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Policy Link URL</label>
+                    <comment>Please enter policy link relative to store. For example: privacy-policy-cookie-restriction-mode.</comment>
+                </field>
+            </group>
+            <group id="colors" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Colors</label>
+                <field id="background" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <frontend_model>Me\CookieWarning\Block\Adminhtml\FontColor</frontend_model>
+                    <tooltip>Please click on the text box to select color.</tooltip>
+                    <comment>Please select the background color of the warning block.</comment>
+                </field>
+                <field id="background_text" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Text Color</label>
+                    <frontend_model>Me\CookieWarning\Block\Adminhtml\FontColor</frontend_model>
+                    <tooltip>Please click on the text box to select color.</tooltip>
+                    <comment>Please select the background text color of the warning block.</comment>
+                </field>
+                <field id="button_background" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Color</label>
+                    <frontend_model>Me\CookieWarning\Block\Adminhtml\FontColor</frontend_model>
+                    <tooltip>Please click on the text box to select color.</tooltip>
+                    <comment>Please select the button background color of the warning block.</comment>
+                </field>
+                <field id="button_text" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Text Color</label>
+                    <frontend_model>Me\CookieWarning\Block\Adminhtml\FontColor</frontend_model>
+                    <tooltip>Please click on the text box to select color.</tooltip>
+                    <comment>Please select the button text color of the warning block.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

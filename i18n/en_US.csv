@@ -1,0 +1,30 @@
+"Banner bottom","Banner bottom"
+"Banner Top","Banner Top"
+"Banner top (pushdown)","Banner top (pushdown)"
+"Floating left","Floating left"
+"Floating right","Floating right"
+"Magevolve Extensions","Magevolve Extensions"
+"Cookie Alert","Cookie Alert"
+Basic,Basic
+"Enable Extension","Enable Extension"
+"Enable extension.","Enable extension."
+Display,Display
+Position,Position
+"Please select the position of the cookie warning.","Please select the position of the cookie warning."
+Message,Message
+"Please enter the message for the cookie wraning. You can use HTML tags for formatting.","Please enter the message for the cookie wraning. You can use HTML tags for formatting."
+"Dismiss Button Text","Dismiss Button Text"
+"Please enter dismiss button text.","Please enter dismiss button text."
+"Policy Link Text","Policy Link Text"
+"Please enter policy link text.","Please enter policy link text."
+"Policy Link URL","Policy Link URL"
+"Please enter policy link relative to store. For example: privacy-policy-cookie-restriction-mode.","Please enter policy link relative to store. For example: privacy-policy-cookie-restriction-mode."
+Colors,Colors
+"Background Color","Background Color"
+"Please select the background color of the warning block.","Please select the background color of the warning block."
+"Background Text Color","Background Text Color"
+"Please select the background text color of the warning block.","Please select the background text color of the warning block."
+"Button Color","Button Color"
+"Please select the button background color of the warning block.","Please select the button background color of the warning block."
+"Button Text Color","Button Text Color"
+"Please select the button text color of the warning block.","Please select the button text color of the warning block."

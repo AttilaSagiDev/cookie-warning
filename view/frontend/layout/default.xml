@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 Magevolve Ltd.  All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" src_type="url" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js" src_type="url" />
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Me\CookieWarning\Block\Warning" name="cookie.warning" after="copyright" template="Me_CookieWarning::warning.phtml" />
+        </referenceContainer>
+    </body>
+</page>
