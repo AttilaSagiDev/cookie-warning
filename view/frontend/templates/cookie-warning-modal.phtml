@@ -14,5 +14,33 @@ $viewModel = $block->getData('view_model');
 ?>
 
 <?php if ($viewModel->isEnabled()): ?>
-    <p>test modal 123</p>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "cookieWarningModal": {}
+            }
+        }
+    </script>
+
+    <div id="cookie-warning-modal">
+        <div class="content">
+            Popup Content1
+        </div>
+    </div>
+
+    <!--<div data-bind="mageInit: {
+        'Magento_Ui/js/modal/modal':{
+            'type': 'popup',
+            'autoOpen': true,
+            'title': 'Popup title',
+            'responsive': true,
+            'buttons': [{
+                text: jQuery.mage.__('Submit1'),
+                class: 'action'
+            }]
+        }}">
+        <div class="content">
+            Popup Content1
+        </div>
+    </div>-->
 <?php endif; ?>
