@@ -1,0 +1,18 @@
+<?php
+/**
+ * Copyright (c) 2024 Attila Sagi
+ * @license http://www.opensource.org/licenses/mit-license.html  MIT License
+ */
+
+/**
+ * @var $block \Magento\Framework\View\Element\Template
+ * @var $escaper Magento\Framework\Escaper;
+ * @var $viewModel \Space\CookieWarning\ViewModel\View\CookieWarning
+ */
+
+$viewModel = $block->getData('view_model');
+?>
+
+<?php if ($viewModel->isEnabled()): ?>
+    <p>test modal 123</p>
+<?php endif; ?>
