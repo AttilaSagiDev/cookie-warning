@@ -38,4 +38,54 @@ class CookieWarning implements ArgumentInterface
     {
         return $this->config->isEnabled();
     }
+
+    /**
+     * Get cookie message
+     *
+     * @return string
+     */
+    public function getCookieMessage(): string
+    {
+        return $this->config->getCookieMessage();
+    }
+
+    /**
+     * Get accept button text
+     *
+     * @return string
+     */
+    public function getAcceptButtonText(): string
+    {
+        return $this->config->getAcceptButtonText();
+    }
+
+    /**
+     * Get decline button text
+     *
+     * @return string
+     */
+    public function getDeclineButtonText(): string
+    {
+        return $this->config->getDeclineButtonText();
+    }
+
+    /**
+     * Get link text
+     *
+     * @return string
+     */
+    public function getLinkText(): string
+    {
+        return $this->config->getLinkText();
+    }
+
+    /**
+     * Get link url
+     *
+     * @return string
+     */
+    public function getLinkUrl(): string
+    {
+        return $this->config->getLinkUrl();
+    }
 }

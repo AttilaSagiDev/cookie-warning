@@ -6,13 +6,17 @@
 define([
     'jquery',
     'Magento_Ui/js/modal/modal',
+    'mage/translate',
     'jquery-ui-modules/widget'
-], function ($, modal) {
+], function ($, modal, $t) {
     'use strict';
 
     $.widget('mage.cookieWarningModal', {
-        options: {
 
+        defaults: {
+            modalId : '#cookie-warning-modal',
+            acceptButtonText: 'Got It!',
+            declineButtonText: 'Decline'
         },
 
         /**
@@ -20,23 +24,34 @@ define([
          * @private
          */
         _create: function () {
-            console.log('mage.cookieWarningModal');
+            if (typeof this.options.acceptButtonText === "undefined") {
+                this.options.acceptButtonText = this.defaults.acceptButtonText;
+            }
 
-            let options;
-            options = {
+            if (typeof this.options.declineButtonText === "undefined") {
+                this.options.declineButtonText = this.defaults.declineButtonText;
+            }
+
+            let modalOptions = {
                 'type': 'popup',
                 'autoOpen': true,
                 'title': 'Popup title',
                 'responsive': true,
-                'buttons': [{
-                    text: jQuery.mage.__('Submit1'),
-                    class: 'action'
-                }]
+                'buttons': [
+                    {
+                        text: $t(this.options.declineButtonText),
+                        class: 'action'
+                    },
+                    {
+                        text: $t(this.options.acceptButtonText),
+                        class: 'action'
+                    }
+                ]
             };
 
-            modal(options, $('#cookie-warning-modal'));
+            modal(modalOptions, $(this.defaults.modalId));
 
-            $('#cookie-warning-modal').modal('openModal');
+            $(this.defaults.modalId).modal('openModal');
         }
     });
 

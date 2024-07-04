@@ -14,33 +14,28 @@ $viewModel = $block->getData('view_model');
 ?>
 
 <?php if ($viewModel->isEnabled()): ?>
-    <script type="text/x-magento-init">
-        {
-            "*": {
-                "cookieWarningModal": {}
-            }
-        }
-    </script>
-
-    <div id="cookie-warning-modal">
+    <div id="cookie-warning-modal" class="cookie-warning-modal no-display">
         <div class="content">
-            Popup Content1
+            <div class="message">
+                <?= $escaper->escapeHtml($viewModel->getCookieMessage(), ['strong']); ?>
+            </div>
+            <div class="link">
+                <a href="<?= $escaper->escapeUrl($viewModel->getLinkUrl()) ?>"
+                   title="<?= $escaper->escapeHtml($viewModel->getLinkText()) ?>">
+                    <?= $escaper->escapeHtml($viewModel->getLinkText()) ?>
+                </a>
+            </div>
         </div>
     </div>
 
-    <!--<div data-bind="mageInit: {
-        'Magento_Ui/js/modal/modal':{
-            'type': 'popup',
-            'autoOpen': true,
-            'title': 'Popup title',
-            'responsive': true,
-            'buttons': [{
-                text: jQuery.mage.__('Submit1'),
-                class: 'action'
-            }]
-        }}">
-        <div class="content">
-            Popup Content1
-        </div>
-    </div>-->
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "cookieWarningModal": {
+                    "acceptButtonText" : "<?= $escaper->escapeHtml($viewModel->getAcceptButtonText()) ?>",
+                    "declineButtonText" : "<?= $escaper->escapeHtml($viewModel->getDeclineButtonText()) ?>"
+                }
+            }
+        }
+    </script>
 <?php endif; ?>
