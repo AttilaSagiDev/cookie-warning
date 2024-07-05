@@ -12,6 +12,15 @@
             <base_config>
                 <enabled>0</enabled>
             </base_config>
+            <display_config>
+                <cookie_message>
+                    <![CDATA[This website uses <strong>cookies</strong> to ensure you get the best experience on our website.]]>
+                </cookie_message>
+                <accept_button_text><![CDATA[Got It!]]></accept_button_text>
+                <decline_button_text><![CDATA[Decline]]></decline_button_text>
+                <link_text><![CDATA[Learn more]]></link_text>
+                <link_url><![CDATA[privacy-policy-cookie-restriction-mode]]></link_url>
+            </display_config>
         </cookie_warning_settings>
     </default>
 </config>

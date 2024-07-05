@@ -42,4 +42,69 @@ class Config implements ConfigInterface
             ScopeInterface::SCOPE_STORE
         );
     }
+
+    /**
+     * Get cookie message
+     *
+     * @return string
+     */
+    public function getCookieMessage(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_COOKIE_MESSAGE,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get accept button text
+     *
+     * @return string
+     */
+    public function getAcceptButtonText(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_ACCEPT_BUTTON_TEXT,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get decline button text
+     *
+     * @return string
+     */
+    public function getDeclineButtonText(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_DECLINE_BUTTON_TEXT,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get link text
+     *
+     * @return string
+     */
+    public function getLinkText(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_LINK_TEXT,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get link url
+     *
+     * @return string
+     */
+    public function getLinkUrl(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_LINK_URL,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
 }
