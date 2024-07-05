@@ -32,7 +32,9 @@
                 <field id="cookie_message" translate="label comment" type="textarea" sortOrder="10" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Message</label>
-                    <comment>Please enter the message for the cookie warning.</comment>
+                    <comment>
+                        <![CDATA[Please enter the message for the cookie warning. You can use only the "strong" HTML tag for formatting.]]>
+                    </comment>
                 </field>
                 <field id="accept_button_text" translate="label comment" type="text" sortOrder="20" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">

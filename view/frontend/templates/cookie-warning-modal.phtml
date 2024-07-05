@@ -8,29 +8,52 @@
  * @var $block \Magento\Framework\View\Element\Template
  * @var $escaper Magento\Framework\Escaper;
  * @var $viewModel \Space\CookieWarning\ViewModel\View\CookieWarning
+ * @var $secureRenderer \Magento\Framework\View\Helper\SecureHtmlRender
  */
 
 $viewModel = $block->getData('view_model');
 ?>
 
+<style>
+    .cookie-warning {
+        top: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        z-index: 3;
+    }
+</style>
+
 <?php if ($viewModel->isEnabled()): ?>
-    <div id="cookie-warning-modal" class="cookie-warning-modal no-display">
-        <div class="content">
-            <div class="message">
-                <?= $escaper->escapeHtml($viewModel->getCookieMessage(), ['strong']); ?>
-            </div>
-            <div class="link">
+    <div role="alertdialog"
+         tabindex="-1"
+         class="cookie-warning"
+         id="cookie-warning-block">
+        <div role="document" class="content" tabindex="0">
+            <p class="message">
+                <strong><?= $escaper->escapeHtml(__('We use cookies to make your experience better.')) ?></strong>
+                <span><?= $escaper->escapeHtml($viewModel->getCookieMessage(), ['strong']) ?></span>
+            </p>
+            <p class="link">
                 <a href="<?= $escaper->escapeUrl($viewModel->getLinkUrl()) ?>"
                    title="<?= $escaper->escapeHtml($viewModel->getLinkText()) ?>">
-                    <?= $escaper->escapeHtml($viewModel->getLinkText()) ?>
+                    <span><?= $escaper->escapeHtml($viewModel->getLinkText()) ?></span>
                 </a>
+            </p>
+            <div class="actions">
+                <button id="btn-cookie-warning-accept" class="action allow primary">
+                    <span><?= $escaper->escapeHtml($viewModel->getAcceptButtonText()) ?></span>
+                </button>
+                <button id="btn-cookie-warning-decline" class="action decline secondary">
+                    <span><?= $escaper->escapeHtml($viewModel->getDeclineButtonText()) ?></span>
+                </button>
             </div>
         </div>
     </div>
-
+    <?php //= /* @noEscape */ $secureRenderer->renderStyleAsTag("display: none;", 'div#cookie-warning-block') ?>
     <script type="text/x-magento-init">
         {
-            "*": {
+            "#notice-cookie-block": {
                 "cookieWarningModal": {
                     "acceptButtonText" : "<?= $escaper->escapeHtml($viewModel->getAcceptButtonText()) ?>",
                     "declineButtonText" : "<?= $escaper->escapeHtml($viewModel->getDeclineButtonText()) ?>"
