@@ -16,18 +16,27 @@ $viewModel = $block->getData('view_model');
 
 <style>
     .cookie-warning {
+        position: fixed;
+        z-index: 4;
+    }
+
+    .cookie-warning.top {
         top: 0;
         left: 0;
-        position: fixed;
         right: 0;
-        z-index: 3;
+    }
+
+    .cookie-warning.bottom {
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 </style>
 
 <?php if ($viewModel->isEnabled()): ?>
     <div role="alertdialog"
          tabindex="-1"
-         class="cookie-warning"
+         class="cookie-warning <?= $escaper->escapeHtml($viewModel->getPosition()) ?>"
          id="cookie-warning-block">
         <div role="document" class="content" tabindex="0">
             <p class="message">
@@ -53,8 +62,8 @@ $viewModel = $block->getData('view_model');
     <?php //= /* @noEscape */ $secureRenderer->renderStyleAsTag("display: none;", 'div#cookie-warning-block') ?>
     <script type="text/x-magento-init">
         {
-            "#notice-cookie-block": {
-                "cookieWarningModal": {
+            "#cookie-warning-block": {
+                "cookieWarning": {
                     "acceptButtonText" : "<?= $escaper->escapeHtml($viewModel->getAcceptButtonText()) ?>",
                     "declineButtonText" : "<?= $escaper->escapeHtml($viewModel->getDeclineButtonText()) ?>"
                 }

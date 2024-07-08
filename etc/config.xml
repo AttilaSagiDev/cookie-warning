@@ -16,6 +16,7 @@
                 <cookie_message>
                     <![CDATA[This website uses <strong>cookies</strong> to ensure you get the best experience on our website.]]>
                 </cookie_message>
+                <position_to_show>top</position_to_show>
                 <accept_button_text>Got It!</accept_button_text>
                 <decline_button_text>Decline</decline_button_text>
                 <link_text>Learn more</link_text>

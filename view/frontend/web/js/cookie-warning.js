@@ -10,10 +10,9 @@ define([
 ], function ($) {
     'use strict';
 
-    $.widget('mage.cookieWarningModal', {
+    $.widget('mage.cookieWarning', {
 
         defaults: {
-            modalId : '#cookie-warning-modal',
             acceptButtonText: 'Got It!',
             declineButtonText: 'Decline'
         },
@@ -23,9 +22,9 @@ define([
          * @private
          */
         _create: function () {
-            console.log('mage.cookieWarningModal');
+            console.log('mage.cookieWarning');
         }
     });
 
-    return $.mage.cookieWarningModal;
+    return $.mage.cookieWarning;
 });

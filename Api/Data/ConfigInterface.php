@@ -16,6 +16,11 @@ interface ConfigInterface
     public const XML_PATH_ENABLED = 'cookie_warning_settings/base_config/enabled';
 
     /**
+     * Position config path
+     */
+    public const XML_PATH_POSITION = 'cookie_warning_settings/display_config/position_to_show';
+
+    /**
      * Message config path
      */
     public const XML_PATH_COOKIE_MESSAGE = 'cookie_warning_settings/display_config/cookie_message';
@@ -46,6 +51,13 @@ interface ConfigInterface
      * @return bool
      */
     public function isEnabled(): bool;
+
+    /**
+     * Get position
+     *
+     * @return string
+     */
+    public function getPosition(): string;
 
     /**
      * Get cookie message
