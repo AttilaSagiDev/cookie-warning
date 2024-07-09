@@ -67,6 +67,24 @@
                     <comment>Please enter policy link relative to store. For example: privacy-policy-cookie-restriction-mode.</comment>
                 </field>
             </group>
+            <group id="color_config" translate="label comment" type="text" sortOrder="30" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Color Settings</label>
+                <field id="background_color" translate="label comment" sortOrder="10" type="hidden" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <validate>required-entry</validate>
+                    <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
+                    <comment>Please select the background color of the warning block.</comment>
+                </field>
+                <field id="text_color" translate="label comment" sortOrder="20" type="hidden" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Font Color</label>
+                    <validate>required-entry</validate>
+                    <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
+                    <comment>Please select the text color of the warning block.</comment>
+                </field>
+            </group>
         </section>
     </system>
 </config>
