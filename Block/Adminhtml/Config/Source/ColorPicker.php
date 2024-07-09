@@ -30,7 +30,7 @@ class ColorPicker extends Field
                     'htmlId' => $element->getHtmlId(),
                     'value' => $value
                 ]
-        )->setTemplate('Space_CookieWarning::system/config/color-picker.phtml');
+            )->setTemplate('Space_CookieWarning::system/config/color-picker.phtml');
         $html .= $block->toHtml();
 
         return $html;
