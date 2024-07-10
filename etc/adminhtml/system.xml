@@ -35,7 +35,7 @@
                     <source_model>Space\CookieWarning\Model\Config\Source\Position</source_model>
                     <comment>Please select the position of the cookie warning.</comment>
                 </field>
-                <field id="cookie_title" translate="label comment" type="textarea" sortOrder="20" showInDefault="1"
+                <field id="cookie_title" translate="label comment" type="text" sortOrder="20" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Title</label>
                     <validate>required-entry</validate>
