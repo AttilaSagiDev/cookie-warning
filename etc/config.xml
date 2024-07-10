@@ -13,6 +13,7 @@
                 <enabled>0</enabled>
             </base_config>
             <display_config>
+                <cookie_title>Cookie Warning</cookie_title>
                 <cookie_message>
                     <![CDATA[This website uses <strong>cookies</strong> to ensure you get the best experience on our website.]]>
                 </cookie_message>

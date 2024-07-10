@@ -17,7 +17,7 @@ class ColorPicker extends Field
     /**
      * [_getElementHtml used to get color from color picker]
      *
-     * @param  AbstractElement $element
+     * @param AbstractElement $element
      * @return string
      */
     protected function _getElementHtml(AbstractElement $element): string

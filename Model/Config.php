@@ -57,6 +57,19 @@ class Config implements ConfigInterface
     }
 
     /**
+     * Get cookie title
+     *
+     * @return string
+     */
+    public function getCookieTitle(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_COOKIE_TITLE,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
      * Get cookie message
      *
      * @return string

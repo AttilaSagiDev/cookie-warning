@@ -17,7 +17,7 @@ $viewModel = $block->getData('view_model');
 <style>
     .cookie-warning {
         position: fixed;
-        z-index: 4;
+        z-index: 10;
     }
 
     .cookie-warning.top {
@@ -31,6 +31,15 @@ $viewModel = $block->getData('view_model');
         left: 0;
         right: 0;
     }
+
+    .cookie-warning .content {
+        padding: 1rem;
+        background: #fff;
+    }
+
+    .cookie-warning .content h3 {
+        margin-top: 0;
+    }
 </style>
 
 <?php if ($viewModel->isEnabled()): ?>
@@ -39,6 +48,7 @@ $viewModel = $block->getData('view_model');
          class="cookie-warning <?= $escaper->escapeHtml($viewModel->getPosition()) ?>"
          id="cookie-warning-block">
         <div role="document" class="content" tabindex="0">
+            <h3><?= $escaper->escapeHtml($viewModel->getTitle()) ?></h3>
             <p class="message">
                 <strong><?= $escaper->escapeHtml(__('We use cookies to make your experience better.')) ?></strong>
                 <span><?= $escaper->escapeHtml($viewModel->getCookieMessage(), ['strong']) ?></span>

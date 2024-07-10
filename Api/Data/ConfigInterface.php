@@ -21,6 +21,11 @@ interface ConfigInterface
     public const XML_PATH_POSITION = 'cookie_warning_settings/display_config/position_to_show';
 
     /**
+     * Title config path
+     */
+    public const XML_PATH_COOKIE_TITLE = 'cookie_warning_settings/display_config/cookie_title';
+
+    /**
      * Message config path
      */
     public const XML_PATH_COOKIE_MESSAGE = 'cookie_warning_settings/display_config/cookie_message';
@@ -58,6 +63,13 @@ interface ConfigInterface
      * @return string
      */
     public function getPosition(): string;
+
+    /**
+     * Get cookie title
+     *
+     * @return string
+     */
+    public function getCookieTitle(): string;
 
     /**
      * Get cookie message

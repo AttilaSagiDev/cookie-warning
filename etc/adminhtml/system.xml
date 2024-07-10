@@ -29,38 +29,45 @@
             <group id="display_config" translate="label" type="text" sortOrder="20" showInDefault="1"
                    showInWebsite="1" showInStore="1">
                 <label>Display</label>
-                <field id="cookie_message" translate="label comment" type="textarea" sortOrder="10" showInDefault="1"
-                       showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Message</label>
-                    <comment>
-                        <![CDATA[Please enter the message for the cookie warning. You can use only the "strong" HTML tag for formatting.]]>
-                    </comment>
-                </field>
-                <field id="position_to_show" translate="label" type="select" sortOrder="20" showInDefault="1"
+                <field id="position_to_show" translate="label" type="select" sortOrder="10" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Position</label>
                     <source_model>Space\CookieWarning\Model\Config\Source\Position</source_model>
                     <comment>Please select the position of the cookie warning.</comment>
                 </field>
-                <field id="accept_button_text" translate="label comment" type="text" sortOrder="30" showInDefault="1"
+                <field id="cookie_title" translate="label comment" type="textarea" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Title</label>
+                    <validate>required-entry</validate>
+                    <comment>Please enter the title for the cookie warning.</comment>
+                </field>
+                <field id="cookie_message" translate="label comment" type="textarea" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Message</label>
+                    <validate>required-entry</validate>
+                    <comment>
+                        <![CDATA[Please enter the message for the cookie warning. You can use only the "strong" HTML tag for formatting.]]>
+                    </comment>
+                </field>
+                <field id="accept_button_text" translate="label comment" type="text" sortOrder="40" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Accept Button Text</label>
                     <validate>required-entry</validate>
                     <comment>Please enter accept button text.</comment>
                 </field>
-                <field id="decline_button_text" translate="label comment" type="text" sortOrder="40" showInDefault="1"
+                <field id="decline_button_text" translate="label comment" type="text" sortOrder="50" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Dismiss Button Text</label>
                     <validate>required-entry</validate>
                     <comment>Please enter decline button text.</comment>
                 </field>
-                <field id="link_text" translate="label comment" type="text" sortOrder="50" showInDefault="1"
+                <field id="link_text" translate="label comment" type="text" sortOrder="60" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Policy Link Text</label>
                     <validate>required-entry</validate>
                     <comment>Please enter policy link text.</comment>
                 </field>
-                <field id="link_url" translate="label comment" type="text" sortOrder="60" showInDefault="1"
+                <field id="link_url" translate="label comment" type="text" sortOrder="70" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Policy Link URL</label>
                     <validate>required-entry</validate>
