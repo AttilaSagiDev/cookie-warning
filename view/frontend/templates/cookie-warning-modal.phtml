@@ -69,11 +69,12 @@ $viewModel = $block->getData('view_model');
             </div>
         </div>
     </div>
-    <?php //= /* @noEscape */ $secureRenderer->renderStyleAsTag("display: none;", 'div#cookie-warning-block') ?>
+    <?=/* @noEscape */ $secureRenderer->renderStyleAsTag("display: none;", 'div#cookie-warning-block') ?>
     <script type="text/x-magento-init">
         {
             "#cookie-warning-block": {
                 "cookieWarning": {
+                    "declineButtonSelector": "#btn-cookie-warning-decline",
                     "acceptButtonText" : "<?= $escaper->escapeHtml($viewModel->getAcceptButtonText()) ?>",
                     "declineButtonText" : "<?= $escaper->escapeHtml($viewModel->getDeclineButtonText()) ?>"
                 }
