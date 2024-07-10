@@ -44,6 +44,19 @@ class Config implements ConfigInterface
     }
 
     /**
+     * Get position
+     *
+     * @return string
+     */
+    public function getPosition(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_POSITION,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
      * Get cookie message
      *
      * @return string

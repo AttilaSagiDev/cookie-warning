@@ -40,6 +40,16 @@ class CookieWarning implements ArgumentInterface
     }
 
     /**
+     * Get position
+     *
+     * @return string
+     */
+    public function getPosition(): string
+    {
+        return $this->config->getPosition();
+    }
+
+    /**
      * Get cookie message
      *
      * @return string

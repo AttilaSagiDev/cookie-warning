@@ -1,0 +1,42 @@
+<?php
+/**
+ * Copyright (c) 2024 Attila Sagi
+ * @license http://www.opensource.org/licenses/mit-license.html  MIT License
+ */
+
+/**
+ * @var $block \Magento\Backend\Block\Template
+ * @var $escaper Magento\Framework\Escaper;
+ */
+
+$value = $block->getData('value');
+$htmlId = $block->getData('htmlId');
+?>
+<div id="<?= $escaper->escapeHtml($htmlId) ?>_sample"
+     style="display: inline-block; width: 25px; height: 25px;"></div>
+<span id="<?= $escaper->escapeHtml($htmlId) ?>_sample_value">
+    <?= $escaper->escapeHtml($value) ?>
+</span>
+<script>
+    require(
+        [
+            'jquery',
+            'jquery/colorpicker/js/colorpicker'
+        ], function ($) {
+        $(document).ready(function () {
+            let currentField = $('#<?= $escaper->escapeHtml($htmlId) ?>');
+            let sampleField = $('#<?= $escaper->escapeHtml($htmlId) ?>_sample');
+            let valueField = $('#<?= $escaper->escapeHtml($htmlId) ?>_sample_value');
+            sampleField.css('backgroundColor', '<?= $escaper->escapeHtml($value) ?>');
+            sampleField.css('cursor', 'pointer');
+            sampleField.ColorPicker({
+                color: "<?= $escaper->escapeHtml($value) ?>",
+                onChange: function (hsb, hex) {
+                    currentField.val('#' + hex);
+                    sampleField.css('backgroundColor', '#' + hex);
+                    valueField.html('#' + hex);
+                }
+            });
+        });
+    });
+</script>

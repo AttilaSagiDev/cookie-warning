@@ -6,7 +6,7 @@
 var config = {
     map: {
         '*': {
-            cookieWarningModal: 'Space_CookieWarning/js/cookie-warning-modal'
+            cookieWarning: 'Space_CookieWarning/js/cookie-warning'
         }
     }
 };
