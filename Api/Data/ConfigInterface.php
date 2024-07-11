@@ -51,6 +51,16 @@ interface ConfigInterface
     public const XML_PATH_LINK_URL = 'cookie_warning_settings/display_config/link_url';
 
     /**
+     * Background color config path
+     */
+    public const XML_PATH_BACKGROUND_COLOR = 'cookie_warning_settings/color_config/background_color';
+
+    /**
+     * Text color config path
+     */
+    public const XML_PATH_TEXT_COLOR = 'cookie_warning_settings/color_config/text_color';
+
+    /**
      * Check if module is enabled
      *
      * @return bool
@@ -105,4 +115,18 @@ interface ConfigInterface
      * @return string
      */
     public function getLinkUrl(): string;
+
+    /**
+     * Get background color
+     *
+     * @return string
+     */
+    public function getBackgroundColor(): string;
+
+    /**
+     * Get text color
+     *
+     * @return string
+     */
+    public function getTextColor(): string;
 }

@@ -119,4 +119,24 @@ class CookieWarning implements ArgumentInterface
             $this->config->getLinkUrl()
         );
     }
+
+    /**
+     * Get background color
+     *
+     * @return string
+     */
+    public function getBackgroundColor(): string
+    {
+        return $this->config->getBackgroundColor();
+    }
+
+    /**
+     * Get text color
+     *
+     * @return string
+     */
+    public function getTextColor(): string
+    {
+        return $this->config->getTextColor();
+    }
 }

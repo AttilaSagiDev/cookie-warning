@@ -133,4 +133,30 @@ class Config implements ConfigInterface
             ScopeInterface::SCOPE_STORE
         );
     }
+
+    /**
+     * Get background color
+     *
+     * @return string
+     */
+    public function getBackgroundColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_BACKGROUND_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get text color
+     *
+     * @return string
+     */
+    public function getTextColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_TEXT_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
 }
