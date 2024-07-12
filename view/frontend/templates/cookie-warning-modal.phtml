@@ -17,7 +17,15 @@ $viewModel = $block->getData('view_model');
 <style>
     .cookie-warning {
         position: fixed;
-        z-index: 4;
+        z-index: 10;
+    }
+
+    .cookie-warning .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
     }
 
     .cookie-warning.top {
@@ -31,6 +39,15 @@ $viewModel = $block->getData('view_model');
         left: 0;
         right: 0;
     }
+
+    .cookie-warning .content h3 {
+        margin-top: 0;
+    }
+
+    .cookie-warning .content .actions .decline {
+        margin-left: 0.5rem;
+    }
+
 </style>
 
 <?php if ($viewModel->isEnabled()): ?>
@@ -38,32 +55,48 @@ $viewModel = $block->getData('view_model');
          tabindex="-1"
          class="cookie-warning <?= $escaper->escapeHtml($viewModel->getPosition()) ?>"
          id="cookie-warning-block">
-        <div role="document" class="content" tabindex="0">
-            <p class="message">
-                <strong><?= $escaper->escapeHtml(__('We use cookies to make your experience better.')) ?></strong>
-                <span><?= $escaper->escapeHtml($viewModel->getCookieMessage(), ['strong']) ?></span>
-            </p>
-            <p class="link">
-                <a href="<?= $escaper->escapeUrl($viewModel->getLinkUrl()) ?>"
-                   title="<?= $escaper->escapeHtml($viewModel->getLinkText()) ?>">
-                    <span><?= $escaper->escapeHtml($viewModel->getLinkText()) ?></span>
-                </a>
-            </p>
+        <div role="document" class="content" tabindex="0"
+             style="background-color: <?= $escaper->escapeHtml($viewModel->getBackgroundColor()) ?>"><!-- //NOSONAR -->
+            <div class="message-content">
+                <h3 style="color: <?= $escaper->escapeHtml($viewModel->getTextColor()) ?>">
+                    <?= $escaper->escapeHtml($viewModel->getTitle()) ?>
+                </h3>
+                <p class="message" style="color: <?= $escaper->escapeHtml($viewModel->getTextColor()) ?>">
+                    <span><?= $escaper->escapeHtml($viewModel->getCookieMessage(), ['strong']) ?></span>
+                </p>
+                <p class="link">
+                    <a href="<?= $escaper->escapeUrl($viewModel->getLinkUrl()) ?>"
+                       title="<?= $escaper->escapeHtml($viewModel->getLinkText()) ?>">
+                        <span><?= $escaper->escapeHtml($viewModel->getLinkText()) ?></span>
+                    </a>
+                </p>
+            </div>
             <div class="actions">
-                <button id="btn-cookie-warning-accept" class="action allow primary">
-                    <span><?= $escaper->escapeHtml($viewModel->getAcceptButtonText()) ?></span>
+                <button id="btn-cookie-warning-accept"
+                        class="action allow primary"
+                        style="background-color: <?= $escaper->escapeHtml($viewModel->getAcceptButtonColor()) ?>;
+                            border-color: <?= $escaper->escapeHtml($viewModel->getAcceptButtonColor()) ?>">
+                    <span style="color: <?= $escaper->escapeHtml($viewModel->getAcceptButtonTextColor()) ?>">
+                        <?= $escaper->escapeHtml($viewModel->getAcceptButtonText()) ?>
+                    </span>
                 </button>
-                <button id="btn-cookie-warning-decline" class="action decline secondary">
-                    <span><?= $escaper->escapeHtml($viewModel->getDeclineButtonText()) ?></span>
+                <button id="btn-cookie-warning-decline"
+                        class="action decline secondary"
+                        style="background-color: <?= $escaper->escapeHtml($viewModel->getDeclineButtonColor()) ?>;
+                            border-color: <?= $escaper->escapeHtml($viewModel->getDeclineButtonColor()) ?>">
+                    <span style="color: <?= $escaper->escapeHtml($viewModel->getDeclineButtonTextColor()) ?>">
+                        <?= $escaper->escapeHtml($viewModel->getDeclineButtonText()) ?>
+                    </span>
                 </button>
             </div>
         </div>
     </div>
-    <?php //= /* @noEscape */ $secureRenderer->renderStyleAsTag("display: none;", 'div#cookie-warning-block') ?>
+    <?= /* @noEscape */$secureRenderer->renderStyleAsTag("display: none;", 'div#cookie-warning-block') ?>
     <script type="text/x-magento-init">
         {
             "#cookie-warning-block": {
                 "cookieWarning": {
+                    "declineButtonSelector": "#btn-cookie-warning-decline",
                     "acceptButtonText" : "<?= $escaper->escapeHtml($viewModel->getAcceptButtonText()) ?>",
                     "declineButtonText" : "<?= $escaper->escapeHtml($viewModel->getDeclineButtonText()) ?>"
                 }

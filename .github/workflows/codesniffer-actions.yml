@@ -1,4 +1,4 @@
-name: Code Sniffer Action
+name: Magento 2 Coding Standard
 run-name: Code Sniffer Testing Action
 on:
   pull_request:

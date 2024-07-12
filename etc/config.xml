@@ -13,6 +13,7 @@
                 <enabled>0</enabled>
             </base_config>
             <display_config>
+                <cookie_title>Cookie Warning</cookie_title>
                 <cookie_message>
                     <![CDATA[This website uses <strong>cookies</strong> to ensure you get the best experience on our website.]]>
                 </cookie_message>
@@ -22,6 +23,14 @@
                 <link_text>Learn more</link_text>
                 <link_url><![CDATA[privacy-policy-cookie-restriction-mode]]></link_url>
             </display_config>
+            <color_config>
+                <background_color><![CDATA[#cecece]]></background_color>
+                <text_color><![CDATA[#333333]]></text_color>
+                <accept_button_color><![CDATA[#006bb4]]></accept_button_color>
+                <accept_button_text_color><![CDATA[#ffffff]]></accept_button_text_color>
+                <decline_button_color><![CDATA[#eeeeee]]></decline_button_color>
+                <decline_button_text_color><![CDATA[#333333]]></decline_button_text_color>
+            </color_config>
         </cookie_warning_settings>
     </default>
 </config>

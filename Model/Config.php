@@ -57,6 +57,19 @@ class Config implements ConfigInterface
     }
 
     /**
+     * Get cookie title
+     *
+     * @return string
+     */
+    public function getCookieTitle(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_COOKIE_TITLE,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
      * Get cookie message
      *
      * @return string
@@ -117,6 +130,84 @@ class Config implements ConfigInterface
     {
         return $this->scopeConfig->getValue(
             self::XML_PATH_LINK_URL,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get background color
+     *
+     * @return string
+     */
+    public function getBackgroundColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_BACKGROUND_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get text color
+     *
+     * @return string
+     */
+    public function getTextColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_TEXT_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get accept button color
+     *
+     * @return string
+     */
+    public function getAcceptButtonColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_ACCEPT_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get accept button text color
+     *
+     * @return string
+     */
+    public function getAcceptButtonTextColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_ACCEPT_TEXT_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get decline button color
+     *
+     * @return string
+     */
+    public function getDeclineButtonColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_DECLINE_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get decline button text color
+     *
+     * @return string
+     */
+    public function getDeclineButtonTextColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_DECLINE_TEXT_COLOR,
             ScopeInterface::SCOPE_STORE
         );
     }

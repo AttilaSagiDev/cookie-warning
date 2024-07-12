@@ -14,7 +14,8 @@ define([
 
         defaults: {
             acceptButtonText: 'Got It!',
-            declineButtonText: 'Decline'
+            declineButtonText: 'Decline',
+            declineButtonSelector: '#btn-cookie-warning-decline'
         },
 
         /**
@@ -22,7 +23,14 @@ define([
          * @private
          */
         _create: function () {
+            console.log(this);
             console.log('mage.cookieWarning');
+
+            $(this.element).show();
+
+            $(this.options.declineButtonSelector).on('click', $.proxy(function () {
+                $(this.element).hide();
+            }, this));
         }
     });
 
