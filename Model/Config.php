@@ -159,4 +159,56 @@ class Config implements ConfigInterface
             ScopeInterface::SCOPE_STORE
         );
     }
+
+    /**
+     * Get accept button color
+     *
+     * @return string
+     */
+    public function getAcceptButtonColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_ACCEPT_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get accept button text color
+     *
+     * @return string
+     */
+    public function getAcceptButtonTextColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_ACCEPT_TEXT_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get decline button color
+     *
+     * @return string
+     */
+    public function getDeclineButtonColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_DECLINE_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get decline button text color
+     *
+     * @return string
+     */
+    public function getDeclineButtonTextColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_DECLINE_TEXT_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
 }
