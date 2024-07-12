@@ -15,6 +15,11 @@ use Space\CookieWarning\Api\Data\ConfigInterface;
 class CookieWarning implements ArgumentInterface
 {
     /**
+     * Cookie name
+     */
+    private const COOKIE_WARNING_NAME = 'cookie_warning';
+
+    /**
      * @var UrlInterface
      */
     private UrlInterface $url;
@@ -36,6 +41,16 @@ class CookieWarning implements ArgumentInterface
     ) {
         $this->url = $url;
         $this->config = $config;
+    }
+
+    /**
+     * Get cookie name
+     *
+     * @return string
+     */
+    public function getCookieName(): string
+    {
+        return self::COOKIE_WARNING_NAME;
     }
 
     /**
