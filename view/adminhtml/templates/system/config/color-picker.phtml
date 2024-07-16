@@ -29,6 +29,7 @@ $htmlId = $block->getData('htmlId');
             let valueField = $('#<?= $escaper->escapeHtml($htmlId) ?>_sample_value');
             sampleField.css('backgroundColor', '<?= $escaper->escapeHtml($value) ?>');
             sampleField.css('cursor', 'pointer');
+            sampleField.css('border', '1px solid black');
             valueField.css('vertical-align', 'super');
             sampleField.ColorPicker({
                 color: "<?= $escaper->escapeHtml($value) ?>",

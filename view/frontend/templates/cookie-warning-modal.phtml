@@ -66,7 +66,8 @@ $viewModel = $block->getData('view_model');
                 </p>
                 <p class="link">
                     <a href="<?= $escaper->escapeUrl($viewModel->getLinkUrl()) ?>"
-                       title="<?= $escaper->escapeHtml($viewModel->getLinkText()) ?>">
+                       title="<?= $escaper->escapeHtml($viewModel->getLinkText()) ?>"
+                       style="color: <?= $escaper->escapeHtml($viewModel->getLinkColor()) ?>">
                         <span><?= $escaper->escapeHtml($viewModel->getLinkText()) ?></span>
                     </a>
                 </p>

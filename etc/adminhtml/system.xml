@@ -91,28 +91,35 @@
                     <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
                     <comment>Please select the text color of the warning block.</comment>
                 </field>
-                <field id="accept_button_color" translate="label comment" sortOrder="30" type="hidden" showInDefault="1"
+                <field id="link_color" translate="label comment" sortOrder="30" type="hidden" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Link Color</label>
+                    <validate>required-entry</validate>
+                    <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
+                    <comment>Please select the link color of the warning block.</comment>
+                </field>
+                <field id="accept_button_color" translate="label comment" sortOrder="40" type="hidden" showInDefault="1"
                        showInWebsite="1" showInStore="1">
                     <label>Accept Button Color</label>
                     <validate>required-entry</validate>
                     <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
                     <comment>Please select the accept button background color of the warning block.</comment>
                 </field>
-                <field id="accept_button_text_color" translate="label comment" sortOrder="40" type="hidden" showInDefault="1"
+                <field id="accept_button_text_color" translate="label comment" sortOrder="50" type="hidden" showInDefault="1"
                        showInWebsite="1" showInStore="1">
                     <label>Accept Button Text Color</label>
                     <validate>required-entry</validate>
                     <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
                     <comment>Please select the accept button text color of the warning block.</comment>
                 </field>
-                <field id="decline_button_color" translate="label comment" sortOrder="50" type="hidden" showInDefault="1"
+                <field id="decline_button_color" translate="label comment" sortOrder="60" type="hidden" showInDefault="1"
                        showInWebsite="1" showInStore="1">
                     <label>Decline Button Color</label>
                     <validate>required-entry</validate>
                     <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
                     <comment>Please select the decline button background color of the warning block.</comment>
                 </field>
-                <field id="decline_button_text_color" translate="label comment" sortOrder="60" type="hidden" showInDefault="1"
+                <field id="decline_button_text_color" translate="label comment" sortOrder="70" type="hidden" showInDefault="1"
                        showInWebsite="1" showInStore="1">
                     <label>Decline Button Text Color</label>
                     <validate>required-entry</validate>

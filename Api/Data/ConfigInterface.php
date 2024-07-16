@@ -61,6 +61,11 @@ interface ConfigInterface
     public const XML_PATH_TEXT_COLOR = 'cookie_warning_settings/color_config/text_color';
 
     /**
+     * Text color config path
+     */
+    public const XML_PATH_LINK_COLOR = 'cookie_warning_settings/color_config/link_color';
+
+    /**
      * Accept button color config path
      */
     public const XML_PATH_ACCEPT_COLOR = 'cookie_warning_settings/color_config/accept_button_color';
@@ -149,6 +154,13 @@ interface ConfigInterface
      * @return string
      */
     public function getTextColor(): string;
+
+    /**
+     * Get link color
+     *
+     * @return string
+     */
+    public function getLinkColor(): string;
 
     /**
      * Get accept button color

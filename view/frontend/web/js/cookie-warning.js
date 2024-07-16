@@ -30,8 +30,6 @@ define([
             }
 
             if (typeof this.options.cookieName !== "undefined") {
-                console.log($.mage.cookies.get(this.options.cookieName));
-
                 if ($.mage.cookies.get(this.options.cookieName)) {
                     this.element.hide();
                 } else {
@@ -39,8 +37,7 @@ define([
                 }
 
                 $(this.options.acceptButtonSelector).on('click', $.proxy(function () {
-                    let cookieExpires = new Date(new Date().getTime() + this.options.cookieLifetimeSeconds * 1000);
-
+                    let cookieExpires = new Date(new Date().getTime() + parseInt(this.options.cookieLifetimeSeconds) * 1000);
                     $.mage.cookies.set(this.options.cookieName, "1", {
                         expires: cookieExpires
                     });

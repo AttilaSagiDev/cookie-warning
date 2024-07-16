@@ -26,6 +26,7 @@
             <color_config>
                 <background_color><![CDATA[#cecece]]></background_color>
                 <text_color><![CDATA[#333333]]></text_color>
+                <link_color><![CDATA[#006bb4]]></link_color>
                 <accept_button_color><![CDATA[#006bb4]]></accept_button_color>
                 <accept_button_text_color><![CDATA[#ffffff]]></accept_button_text_color>
                 <decline_button_color><![CDATA[#eeeeee]]></decline_button_color>

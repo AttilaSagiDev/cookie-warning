@@ -161,6 +161,19 @@ class Config implements ConfigInterface
     }
 
     /**
+     * Get link color
+     *
+     * @return string
+     */
+    public function getLinkColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_LINK_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
      * Get accept button color
      *
      * @return string

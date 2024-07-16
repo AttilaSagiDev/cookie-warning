@@ -156,6 +156,16 @@ class CookieWarning implements ArgumentInterface
     }
 
     /**
+     * Get link color
+     *
+     * @return string
+     */
+    public function getLinkColor(): string
+    {
+        return $this->config->getLinkColor();
+    }
+
+    /**
      * Get accept button color
      *
      * @return string
