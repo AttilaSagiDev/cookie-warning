@@ -36,6 +36,11 @@ interface ConfigInterface
     public const XML_PATH_ACCEPT_BUTTON_TEXT = 'cookie_warning_settings/display_config/accept_button_text';
 
     /**
+     * Show decline button config path
+     */
+    public const XML_PATH_SHOW_DECLINE_BUTTON = 'cookie_warning_settings/display_config/show_decline_button';
+
+    /**
      * Decline button text config path
      */
     public const XML_PATH_DECLINE_BUTTON_TEXT = 'cookie_warning_settings/display_config/decline_button_text';
@@ -59,6 +64,11 @@ interface ConfigInterface
      * Text color config path
      */
     public const XML_PATH_TEXT_COLOR = 'cookie_warning_settings/color_config/text_color';
+
+    /**
+     * Text color config path
+     */
+    public const XML_PATH_LINK_COLOR = 'cookie_warning_settings/color_config/link_color';
 
     /**
      * Accept button color config path
@@ -116,6 +126,13 @@ interface ConfigInterface
     public function getAcceptButtonText(): string;
 
     /**
+     * Check if show decline button
+     *
+     * @return bool
+     */
+    public function isShowDeclineButton(): bool;
+
+    /**
      * Get decline button text
      *
      * @return string
@@ -149,6 +166,13 @@ interface ConfigInterface
      * @return string
      */
     public function getTextColor(): string;
+
+    /**
+     * Get link color
+     *
+     * @return string
+     */
+    public function getLinkColor(): string;
 
     /**
      * Get accept button color

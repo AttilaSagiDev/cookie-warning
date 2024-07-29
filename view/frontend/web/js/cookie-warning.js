@@ -13,24 +13,42 @@ define([
     $.widget('mage.cookieWarning', {
 
         defaults: {
-            acceptButtonText: 'Got It!',
-            declineButtonText: 'Decline',
+            acceptButtonSelector: '#btn-cookie-warning-accept',
             declineButtonSelector: '#btn-cookie-warning-decline'
         },
 
         /**
-         * Cookie warning modal create
+         * Cookie warning widget create
          * @private
          */
         _create: function () {
-            console.log(this);
-            console.log('mage.cookieWarning');
+            if (typeof this.options.acceptButtonSelector === "undefined" ) {
+                this.options.acceptButtonSelector = this.defaults.acceptButtonSelector;
+            }
+            if (typeof this.options.declineButtonSelector === "undefined" ) {
+                this.options.declineButtonSelector = this.defaults.declineButtonSelector;
+            }
 
-            $(this.element).show();
+            if (typeof this.options.cookieName !== "undefined") {
+                if ($.mage.cookies.get(this.options.cookieName)) {
+                    this.element.hide();
+                } else {
+                    this.element.show();
+                }
 
-            $(this.options.declineButtonSelector).on('click', $.proxy(function () {
-                $(this.element).hide();
-            }, this));
+                $(this.options.acceptButtonSelector).on('click', $.proxy(function () {
+                    let cookieExpires = new Date(new Date().getTime() + parseInt(this.options.cookieLifetimeSeconds) * 1000);
+                    $.mage.cookies.set(this.options.cookieName, "1", {
+                        expires: cookieExpires
+                    });
+                    $(this.element).hide();
+                }, this));
+
+                $(this.options.declineButtonSelector).on('click', $.proxy(function () {
+                    $.mage.cookies.clear(this.options.cookieName);
+                    window.location.href = this.options.policyUrl;
+                }, this));
+            }
         }
     });
 

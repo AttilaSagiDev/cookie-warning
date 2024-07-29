@@ -96,6 +96,19 @@ class Config implements ConfigInterface
     }
 
     /**
+     * Check if show decline button
+     *
+     * @return bool
+     */
+    public function isShowDeclineButton(): bool
+    {
+        return $this->scopeConfig->isSetFlag(
+            self::XML_PATH_SHOW_DECLINE_BUTTON,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
      * Get decline button text
      *
      * @return string
@@ -156,6 +169,19 @@ class Config implements ConfigInterface
     {
         return $this->scopeConfig->getValue(
             self::XML_PATH_TEXT_COLOR,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
+     * Get link color
+     *
+     * @return string
+     */
+    public function getLinkColor(): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_LINK_COLOR,
             ScopeInterface::SCOPE_STORE
         );
     }

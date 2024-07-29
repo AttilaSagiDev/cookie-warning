@@ -15,6 +15,11 @@ use Space\CookieWarning\Api\Data\ConfigInterface;
 class CookieWarning implements ArgumentInterface
 {
     /**
+     * Cookie name
+     */
+    private const COOKIE_WARNING_NAME = 'cookie_warning';
+
+    /**
      * @var UrlInterface
      */
     private UrlInterface $url;
@@ -36,6 +41,16 @@ class CookieWarning implements ArgumentInterface
     ) {
         $this->url = $url;
         $this->config = $config;
+    }
+
+    /**
+     * Get cookie name
+     *
+     * @return string
+     */
+    public function getCookieName(): string
+    {
+        return self::COOKIE_WARNING_NAME;
     }
 
     /**
@@ -89,6 +104,16 @@ class CookieWarning implements ArgumentInterface
     }
 
     /**
+     * Check if show decline button
+     *
+     * @return bool
+     */
+    public function isShowDeclineButton(): bool
+    {
+        return $this->config->isShowDeclineButton();
+    }
+
+    /**
      * Get decline button text
      *
      * @return string
@@ -138,6 +163,16 @@ class CookieWarning implements ArgumentInterface
     public function getTextColor(): string
     {
         return $this->config->getTextColor();
+    }
+
+    /**
+     * Get link color
+     *
+     * @return string
+     */
+    public function getLinkColor(): string
+    {
+        return $this->config->getLinkColor();
     }
 
     /**
