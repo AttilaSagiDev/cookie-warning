@@ -36,6 +36,11 @@ interface ConfigInterface
     public const XML_PATH_ACCEPT_BUTTON_TEXT = 'cookie_warning_settings/display_config/accept_button_text';
 
     /**
+     * Show decline button config path
+     */
+    public const XML_PATH_SHOW_DECLINE_BUTTON = 'cookie_warning_settings/display_config/show_decline_button';
+
+    /**
      * Decline button text config path
      */
     public const XML_PATH_DECLINE_BUTTON_TEXT = 'cookie_warning_settings/display_config/decline_button_text';
@@ -119,6 +124,13 @@ interface ConfigInterface
      * @return string
      */
     public function getAcceptButtonText(): string;
+
+    /**
+     * Check if show decline button
+     *
+     * @return bool
+     */
+    public function isShowDeclineButton(): bool;
 
     /**
      * Get decline button text

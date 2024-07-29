@@ -55,8 +55,8 @@ $viewModel = $block->getData('view_model');
          tabindex="-1"
          class="cookie-warning <?= $escaper->escapeHtml($viewModel->getPosition()) ?>"
          id="cookie-warning-block">
-        <div role="document" class="content" tabindex="0"
-             style="background-color: <?= $escaper->escapeHtml($viewModel->getBackgroundColor()) ?>"><!-- //NOSONAR -->
+        <!-- //NOSONAR --><div role="document" class="content" tabindex="0"
+             style="background-color: <?= $escaper->escapeHtml($viewModel->getBackgroundColor()) ?>">
             <div class="message-content">
                 <h3 style="color: <?= $escaper->escapeHtml($viewModel->getTextColor()) ?>">
                     <?= $escaper->escapeHtml($viewModel->getTitle()) ?>
@@ -81,14 +81,16 @@ $viewModel = $block->getData('view_model');
                         <?= $escaper->escapeHtml($viewModel->getAcceptButtonText()) ?>
                     </span>
                 </button>
-                <button id="btn-cookie-warning-decline"
-                        class="action decline secondary"
-                        style="background-color: <?= $escaper->escapeHtml($viewModel->getDeclineButtonColor()) ?>;
-                            border-color: <?= $escaper->escapeHtml($viewModel->getDeclineButtonColor()) ?>">
-                    <span style="color: <?= $escaper->escapeHtml($viewModel->getDeclineButtonTextColor()) ?>">
-                        <?= $escaper->escapeHtml($viewModel->getDeclineButtonText()) ?>
-                    </span>
-                </button>
+                <?php if ($viewModel->isShowDeclineButton()): ?>
+                    <button id="btn-cookie-warning-decline"
+                            class="action decline secondary"
+                            style="background-color: <?= $escaper->escapeHtml($viewModel->getDeclineButtonColor()) ?>;
+                                border-color: <?= $escaper->escapeHtml($viewModel->getDeclineButtonColor()) ?>">
+                        <span style="color: <?= $escaper->escapeHtml($viewModel->getDeclineButtonTextColor()) ?>">
+                            <?= $escaper->escapeHtml($viewModel->getDeclineButtonText()) ?>
+                        </span>
+                    </button>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -98,6 +100,7 @@ $viewModel = $block->getData('view_model');
             "#cookie-warning-block": {
                 "cookieWarning": {
                     "cookieName": "<?= $escaper->escapeHtml($viewModel->getCookieName()) ?>",
+                    "policyUrl": "<?= $escaper->escapeUrl($viewModel->getLinkUrl()) ?>",
                     "cookieLifetimeSeconds": "10",
                     "acceptButtonSelector": "#btn-cookie-warning-accept",
                     "declineButtonSelector": "#btn-cookie-warning-decline"

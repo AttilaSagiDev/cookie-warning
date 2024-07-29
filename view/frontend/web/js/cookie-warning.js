@@ -46,7 +46,7 @@ define([
 
                 $(this.options.declineButtonSelector).on('click', $.proxy(function () {
                     $.mage.cookies.clear(this.options.cookieName);
-                    $(this.element).show();
+                    window.location.href = this.options.policyUrl;
                 }, this));
             }
         }

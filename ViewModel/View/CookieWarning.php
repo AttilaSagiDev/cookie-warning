@@ -104,6 +104,16 @@ class CookieWarning implements ArgumentInterface
     }
 
     /**
+     * Check if show decline button
+     *
+     * @return bool
+     */
+    public function isShowDeclineButton(): bool
+    {
+        return $this->config->isShowDeclineButton();
+    }
+
+    /**
      * Get decline button text
      *
      * @return string

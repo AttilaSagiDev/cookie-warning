@@ -55,19 +55,28 @@
                     <validate>required-entry</validate>
                     <comment>Please enter accept button text.</comment>
                 </field>
-                <field id="decline_button_text" translate="label comment" type="text" sortOrder="50" showInDefault="1"
+                <field id="show_decline_button" translate="label comment" type="select" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show Dismiss Button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Please select yes to show dismiss button.</comment>
+                </field>
+                <field id="decline_button_text" translate="label comment" type="text" sortOrder="60" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Dismiss Button Text</label>
                     <validate>required-entry</validate>
                     <comment>Please enter decline button text.</comment>
+                    <depends>
+                        <field id="show_decline_button">1</field>
+                    </depends>
                 </field>
-                <field id="link_text" translate="label comment" type="text" sortOrder="60" showInDefault="1"
+                <field id="link_text" translate="label comment" type="text" sortOrder="70" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Policy Link Text</label>
                     <validate>required-entry</validate>
                     <comment>Please enter policy link text.</comment>
                 </field>
-                <field id="link_url" translate="label comment" type="text" sortOrder="70" showInDefault="1"
+                <field id="link_url" translate="label comment" type="text" sortOrder="80" showInDefault="1"
                        showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Policy Link URL</label>
                     <validate>required-entry</validate>
