@@ -13,43 +13,6 @@
 
 $viewModel = $block->getData('view_model');
 ?>
-
-<style>
-    .cookie-warning {
-        position: fixed;
-        z-index: 10;
-    }
-
-    .cookie-warning .content {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5rem 2rem;
-    }
-
-    .cookie-warning.top {
-        top: 0;
-        left: 0;
-        right: 0;
-    }
-
-    .cookie-warning.bottom {
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-
-    .cookie-warning .content h3 {
-        margin-top: 0;
-    }
-
-    .cookie-warning .content .actions .decline {
-        margin-left: 0.5rem;
-    }
-
-</style>
-
 <?php if ($viewModel->isEnabled()): ?>
     <div role="alertdialog"
          tabindex="-1"
@@ -101,7 +64,7 @@ $viewModel = $block->getData('view_model');
                 "cookieWarning": {
                     "cookieName": "<?= $escaper->escapeHtml($viewModel->getCookieName()) ?>",
                     "policyUrl": "<?= $escaper->escapeUrl($viewModel->getLinkUrl()) ?>",
-                    "cookieLifetimeSeconds": "10",
+                    "cookieLifetime": "<?= $escaper->escapeHtml($viewModel->getCookieLifetime()) ?>",
                     "acceptButtonSelector": "#btn-cookie-warning-accept",
                     "declineButtonSelector": "#btn-cookie-warning-decline"
                 }

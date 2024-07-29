@@ -13,11 +13,12 @@
                 <enabled>0</enabled>
             </base_config>
             <display_config>
+                <cookie_lifetime>90</cookie_lifetime>
                 <cookie_title>Cookie Warning</cookie_title>
                 <cookie_message>
                     <![CDATA[This website uses <strong>cookies</strong> to ensure you get the best experience on our website.]]>
                 </cookie_message>
-                <position_to_show>top</position_to_show>
+                <position_to_show>bottom</position_to_show>
                 <accept_button_text>Got It!</accept_button_text>
                 <show_decline_button>0</show_decline_button>
                 <decline_button_text>Decline</decline_button_text>

@@ -16,6 +16,11 @@ interface ConfigInterface
     public const XML_PATH_ENABLED = 'cookie_warning_settings/base_config/enabled';
 
     /**
+     * Cookie lifetime config path
+     */
+    public const XML_PATH_COOKIE_LIFETIME = 'cookie_warning_settings/display_config/cookie_lifetime';
+
+    /**
      * Position config path
      */
     public const XML_PATH_POSITION = 'cookie_warning_settings/display_config/position_to_show';
@@ -96,6 +101,13 @@ interface ConfigInterface
      * @return bool
      */
     public function isEnabled(): bool;
+
+    /**
+     * Get cookie lifetime in days
+     *
+     * @return int
+     */
+    public function getCookieLifetime(): int;
 
     /**
      * Get position

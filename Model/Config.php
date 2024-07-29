@@ -44,6 +44,19 @@ class Config implements ConfigInterface
     }
 
     /**
+     * Get cookie lifetime in days
+     *
+     * @return int
+     */
+    public function getCookieLifetime(): int
+    {
+        return (int)$this->scopeConfig->getValue(
+            self::XML_PATH_COOKIE_LIFETIME,
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**
      * Get position
      *
      * @return string

@@ -64,6 +64,16 @@ class CookieWarning implements ArgumentInterface
     }
 
     /**
+     * Get cookie lifetime in days
+     *
+     * @return int
+     */
+    public function getCookieLifetime(): int
+    {
+        return $this->config->getCookieLifetime();
+    }
+
+    /**
      * Get cookie title
      *
      * @return string

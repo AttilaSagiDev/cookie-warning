@@ -36,8 +36,9 @@ define([
                     this.element.show();
                 }
 
+                let cookieLifetimeInDays = parseInt(this.options.cookieLifetime) * 1000 * 3600 * 24;
                 $(this.options.acceptButtonSelector).on('click', $.proxy(function () {
-                    let cookieExpires = new Date(new Date().getTime() + parseInt(this.options.cookieLifetimeSeconds) * 1000);
+                    let cookieExpires = new Date(new Date().getTime() + cookieLifetimeInDays);
                     $.mage.cookies.set(this.options.cookieName, "1", {
                         expires: cookieExpires
                     });
@@ -45,7 +46,11 @@ define([
                 }, this));
 
                 $(this.options.declineButtonSelector).on('click', $.proxy(function () {
-                    $.mage.cookies.clear(this.options.cookieName);
+                    let cookieExpires = new Date(new Date().getTime() + (1000 * 3600 * 24));
+                    $.mage.cookies.set(this.options.cookieName, "0", {
+                        expires: cookieExpires
+                    });
+                    $(this.element).hide();
                     window.location.href = this.options.policyUrl;
                 }, this));
             }

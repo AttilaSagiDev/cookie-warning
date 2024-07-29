@@ -1,0 +1,40 @@
+Top,Top
+Bottom,Bottom
+"Cookie Warning","Cookie Warning"
+"Space Extensions","Space Extensions"
+Configuration,Configuration
+"Enable Extension","Enable Extension"
+"Enable extension.","Enable extension."
+Display,Display
+"Cookie Lifetime","Cookie Lifetime"
+"Please enter the cookie lifetime in days.","Please enter the cookie lifetime in days."
+Position,Position
+Title,Title
+"Please enter the title for the cookie warning.","Please enter the title for the cookie warning."
+Message,Message
+"Please enter the message for the cookie warning. You can use only the ""strong"" HTML tag for formatting.","Please enter the message for the cookie warning. You can use only the ""strong"" HTML tag for formatting."
+"Accept Button Text","Accept Button Text"
+"Please enter accept button text.","Please enter accept button text."
+"Show Dismiss Button","Show Dismiss Button"
+"Please select yes to show dismiss button.","Please select yes to show dismiss button."
+"Dismiss Button Text","Dismiss Button Text"
+"Please enter decline button text.","Please enter decline button text."
+"Policy Link Text","Policy Link Text"
+"Please enter policy link text.","Please enter policy link text."
+"Policy Link URL","Policy Link URL"
+"Please enter policy link relative to store. For example: privacy-policy-cookie-restriction-mode.","Please enter policy link relative to store. For example: privacy-policy-cookie-restriction-mode."
+"Color Settings","Color Settings"
+"Background Color","Background Color"
+"Please select the background color of the warning block.","Please select the background color of the warning block."
+"Font Color","Font Color"
+"Please select the text color of the warning block.","Please select the text color of the warning block."
+"Link Color","Link Color"
+"Please select the link color of the warning block.","Please select the link color of the warning block."
+"Accept Button Color","Accept Button Color"
+"Please select the accept button background color of the warning block.","Please select the accept button background color of the warning block."
+"Accept Button Text Color","Accept Button Text Color"
+"Please select the accept button text color of the warning block.","Please select the accept button text color of the warning block."
+"Decline Button Color","Decline Button Color"
+"Please select the decline button background color of the warning block.","Please select the decline button background color of the warning block."
+"Decline Button Text Color","Decline Button Text Color"
+"Please select the decline button text color of the warning block.","Please select the decline button text color of the warning block."
