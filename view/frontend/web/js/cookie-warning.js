@@ -36,8 +36,8 @@ define([
                     this.element.show();
                 }
 
+                let cookieExpires = new Date(new Date().getTime() + parseInt(this.options.cookieLifetimeSeconds) * 1000);
                 $(this.options.acceptButtonSelector).on('click', $.proxy(function () {
-                    let cookieExpires = new Date(new Date().getTime() + parseInt(this.options.cookieLifetimeSeconds) * 1000);
                     $.mage.cookies.set(this.options.cookieName, "1", {
                         expires: cookieExpires
                     });
@@ -45,7 +45,10 @@ define([
                 }, this));
 
                 $(this.options.declineButtonSelector).on('click', $.proxy(function () {
-                    $.mage.cookies.clear(this.options.cookieName);
+                    $.mage.cookies.set(this.options.cookieName, "0", {
+                        expires: cookieExpires
+                    });
+                    $(this.element).hide();
                     window.location.href = this.options.policyUrl;
                 }, this));
             }
