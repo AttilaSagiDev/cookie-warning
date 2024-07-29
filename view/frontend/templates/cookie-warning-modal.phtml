@@ -64,7 +64,7 @@ $viewModel = $block->getData('view_model');
                 "cookieWarning": {
                     "cookieName": "<?= $escaper->escapeHtml($viewModel->getCookieName()) ?>",
                     "policyUrl": "<?= $escaper->escapeUrl($viewModel->getLinkUrl()) ?>",
-                    "cookieLifetimeSeconds": "10",
+                    "cookieLifetime": "<?= $escaper->escapeHtml($viewModel->getCookieLifetime()) ?>",
                     "acceptButtonSelector": "#btn-cookie-warning-accept",
                     "declineButtonSelector": "#btn-cookie-warning-decline"
                 }
