@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2024 Attila Sagi
+ * @license http://www.opensource.org/licenses/mit-license.html  MIT License
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="space_tab" translate="label" sortOrder="500">
+            <label>Space Extensions</label>
+        </tab>
+        <section id="cookie_warning_settings" translate="label" type="text" sortOrder="100" showInDefault="1"
+                 showInWebsite="1" showInStore="1">
+            <label>Cookie Warning</label>
+            <tab>space_tab</tab>
+            <resource>Space_CookieWarning::config</resource>
+            <group id="base_config" translate="label" type="text" sortOrder="10" showInDefault="1"
+                   showInWebsite="1" showInStore="0">
+                <label>Configuration</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enable Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable extension.</comment>
+                </field>
+            </group>
+            <group id="display_config" translate="label" type="text" sortOrder="20" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Display</label>
+                <field id="cookie_lifetime" translate="label comment" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Cookie Lifetime</label>
+                    <validate>validate-greater-than-zero validate-number required-entry</validate>
+                    <comment>Please enter the cookie lifetime in days.</comment>
+                </field>
+                <field id="position_to_show" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Position</label>
+                    <source_model>Space\CookieWarning\Model\Config\Source\Position</source_model>
+                    <comment>Please select the position of the cookie warning.</comment>
+                </field>
+                <field id="cookie_title" translate="label comment" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Title</label>
+                    <validate>required-entry</validate>
+                    <comment>Please enter the title for the cookie warning.</comment>
+                </field>
+                <field id="cookie_message" translate="label comment" type="textarea" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Message</label>
+                    <validate>required-entry</validate>
+                    <comment>
+                        <![CDATA[Please enter the message for the cookie warning. You can use only the "strong" HTML tag for formatting.]]>
+                    </comment>
+                </field>
+                <field id="accept_button_text" translate="label comment" type="text" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Accept Button Text</label>
+                    <validate>required-entry</validate>
+                    <comment>Please enter accept button text.</comment>
+                </field>
+                <field id="show_decline_button" translate="label comment" type="select" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show Dismiss Button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Please select yes to show dismiss button.</comment>
+                </field>
+                <field id="decline_button_text" translate="label comment" type="text" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Dismiss Button Text</label>
+                    <validate>required-entry</validate>
+                    <comment>Please enter decline button text.</comment>
+                    <depends>
+                        <field id="show_decline_button">1</field>
+                    </depends>
+                </field>
+                <field id="link_text" translate="label comment" type="text" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Policy Link Text</label>
+                    <validate>required-entry</validate>
+                    <comment>Please enter policy link text.</comment>
+                </field>
+                <field id="link_url" translate="label comment" type="text" sortOrder="90" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Policy Link URL</label>
+                    <validate>required-entry</validate>
+                    <comment>Please enter policy link relative to store. For example: privacy-policy-cookie-restriction-mode.</comment>
+                </field>
+            </group>
+            <group id="color_config" translate="label comment" type="text" sortOrder="30" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Color Settings</label>
+                <field id="background_color" translate="label comment" sortOrder="10" type="hidden" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <validate>required-entry</validate>
+                    <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
+                    <comment>Please select the background color of the warning block.</comment>
+                </field>
+                <field id="text_color" translate="label comment" sortOrder="20" type="hidden" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Font Color</label>
+                    <validate>required-entry</validate>
+                    <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
+                    <comment>Please select the text color of the warning block.</comment>
+                </field>
+                <field id="link_color" translate="label comment" sortOrder="30" type="hidden" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Link Color</label>
+                    <validate>required-entry</validate>
+                    <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
+                    <comment>Please select the link color of the warning block.</comment>
+                </field>
+                <field id="accept_button_color" translate="label comment" sortOrder="40" type="hidden" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Accept Button Color</label>
+                    <validate>required-entry</validate>
+                    <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
+                    <comment>Please select the accept button background color of the warning block.</comment>
+                </field>
+                <field id="accept_button_text_color" translate="label comment" sortOrder="50" type="hidden" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Accept Button Text Color</label>
+                    <validate>required-entry</validate>
+                    <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
+                    <comment>Please select the accept button text color of the warning block.</comment>
+                </field>
+                <field id="decline_button_color" translate="label comment" sortOrder="60" type="hidden" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Decline Button Color</label>
+                    <validate>required-entry</validate>
+                    <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
+                    <comment>Please select the decline button background color of the warning block.</comment>
+                </field>
+                <field id="decline_button_text_color" translate="label comment" sortOrder="70" type="hidden" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Decline Button Text Color</label>
+                    <validate>required-entry</validate>
+                    <frontend_model>Space\CookieWarning\Block\Adminhtml\Config\Source\ColorPicker</frontend_model>
+                    <comment>Please select the decline button text color of the warning block.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

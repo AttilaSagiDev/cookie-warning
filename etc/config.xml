@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2024 Attila Sagi
+ * @license http://www.opensource.org/licenses/mit-license.html  MIT License
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <cookie_warning_settings>
+            <base_config>
+                <enabled>0</enabled>
+            </base_config>
+            <display_config>
+                <cookie_lifetime>90</cookie_lifetime>
+                <cookie_title>Cookie Warning</cookie_title>
+                <cookie_message>
+                    <![CDATA[This website uses <strong>cookies</strong> to ensure you get the best experience on our website.]]>
+                </cookie_message>
+                <position_to_show>bottom</position_to_show>
+                <accept_button_text>Got It!</accept_button_text>
+                <show_decline_button>0</show_decline_button>
+                <decline_button_text>Decline</decline_button_text>
+                <link_text>Learn more</link_text>
+                <link_url><![CDATA[privacy-policy-cookie-restriction-mode]]></link_url>
+            </display_config>
+            <color_config>
+                <background_color><![CDATA[#cecece]]></background_color>
+                <text_color><![CDATA[#333333]]></text_color>
+                <link_color><![CDATA[#006bb4]]></link_color>
+                <accept_button_color><![CDATA[#006bb4]]></accept_button_color>
+                <accept_button_text_color><![CDATA[#ffffff]]></accept_button_text_color>
+                <decline_button_color><![CDATA[#eeeeee]]></decline_button_color>
+                <decline_button_text_color><![CDATA[#333333]]></decline_button_text_color>
+            </color_config>
+        </cookie_warning_settings>
+    </default>
+</config>

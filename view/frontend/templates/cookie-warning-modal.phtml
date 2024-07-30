@@ -1,0 +1,74 @@
+<?php
+/**
+ * Copyright (c) 2024 Attila Sagi
+ * @license http://www.opensource.org/licenses/mit-license.html  MIT License
+ */
+
+/**
+ * @var $block \Magento\Framework\View\Element\Template
+ * @var $escaper Magento\Framework\Escaper;
+ * @var $viewModel \Space\CookieWarning\ViewModel\View\CookieWarning
+ * @var $secureRenderer \Magento\Framework\View\Helper\SecureHtmlRender
+ */
+
+$viewModel = $block->getData('view_model');
+?>
+<?php if ($viewModel->isEnabled()): ?>
+    <div role="alertdialog"
+         tabindex="-1"
+         class="cookie-warning <?= $escaper->escapeHtml($viewModel->getPosition()) ?>"
+         id="cookie-warning-block">
+        <!-- //NOSONAR --><div role="document" class="content" tabindex="0"
+             style="background-color: <?= $escaper->escapeHtml($viewModel->getBackgroundColor()) ?>">
+            <div class="message-content">
+                <h3 style="color: <?= $escaper->escapeHtml($viewModel->getTextColor()) ?>">
+                    <?= $escaper->escapeHtml($viewModel->getTitle()) ?>
+                </h3>
+                <p class="message" style="color: <?= $escaper->escapeHtml($viewModel->getTextColor()) ?>">
+                    <span><?= $escaper->escapeHtml($viewModel->getCookieMessage(), ['strong']) ?></span>
+                </p>
+                <p class="link">
+                    <a href="<?= $escaper->escapeUrl($viewModel->getLinkUrl()) ?>"
+                       title="<?= $escaper->escapeHtml($viewModel->getLinkText()) ?>"
+                       style="color: <?= $escaper->escapeHtml($viewModel->getLinkColor()) ?>">
+                        <span><?= $escaper->escapeHtml($viewModel->getLinkText()) ?></span>
+                    </a>
+                </p>
+            </div>
+            <div class="actions">
+                <button id="btn-cookie-warning-accept"
+                        class="action allow primary"
+                        style="background-color: <?= $escaper->escapeHtml($viewModel->getAcceptButtonColor()) ?>;
+                            border-color: <?= $escaper->escapeHtml($viewModel->getAcceptButtonColor()) ?>">
+                    <span style="color: <?= $escaper->escapeHtml($viewModel->getAcceptButtonTextColor()) ?>">
+                        <?= $escaper->escapeHtml($viewModel->getAcceptButtonText()) ?>
+                    </span>
+                </button>
+                <?php if ($viewModel->isShowDeclineButton()): ?>
+                    <button id="btn-cookie-warning-decline"
+                            class="action decline secondary"
+                            style="background-color: <?= $escaper->escapeHtml($viewModel->getDeclineButtonColor()) ?>;
+                                border-color: <?= $escaper->escapeHtml($viewModel->getDeclineButtonColor()) ?>">
+                        <span style="color: <?= $escaper->escapeHtml($viewModel->getDeclineButtonTextColor()) ?>">
+                            <?= $escaper->escapeHtml($viewModel->getDeclineButtonText()) ?>
+                        </span>
+                    </button>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+    <?= /* @noEscape */$secureRenderer->renderStyleAsTag("display: none;", 'div#cookie-warning-block') ?>
+    <script type="text/x-magento-init">
+        {
+            "#cookie-warning-block": {
+                "cookieWarning": {
+                    "cookieName": "<?= $escaper->escapeHtml($viewModel->getCookieName()) ?>",
+                    "policyUrl": "<?= $escaper->escapeUrl($viewModel->getLinkUrl()) ?>",
+                    "cookieLifetime": "<?= $escaper->escapeHtml($viewModel->getCookieLifetime()) ?>",
+                    "acceptButtonSelector": "#btn-cookie-warning-accept",
+                    "declineButtonSelector": "#btn-cookie-warning-decline"
+                }
+            }
+        }
+    </script>
+<?php endif; ?>
